@@ -66,7 +66,7 @@ service /news on new graphql:Listener(9090) {
             id: uuid:createType1AsString(),
             ...newsUpdate
         };
-        check producerNewsUpdate(newsRecord);
+        check produceNewsUpdate(newsRecord);
         return newsRecord;
     }
 

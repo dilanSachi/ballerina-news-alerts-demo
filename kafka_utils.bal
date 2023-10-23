@@ -3,7 +3,7 @@ import ballerina/log;
 
 final kafka:Producer newsProducer = check new (kafka:DEFAULT_URL);
 
-isolated function producerNewsUpdate(NewsRecord newsRecord) returns error? {
+isolated function produceNewsUpdate(NewsRecord newsRecord) returns error? {
     lock {
         check newsProducer->send({
             topic: publisherTable.get(newsRecord.publisherId).agency,
